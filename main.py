@@ -1,33 +1,37 @@
 diccionari = {}
-opcio1=0
+opcio1=-1
 import os
-clear = lambda: os.system('cls')
+cls = lambda: os.system('cls')
 
 print("\n----------------------------------------")
 print("Benvingut a El Llibre de les Acceptions.")
 print("----------------------------------------\n\n")
 
 #MenuOpcions
-print("Que vols fer? \n\n")
-print("1.Afegir")
-print("2.Mostrar")
-print("3.Modificar")
-print("4.Eliminar")
-while opcio1 < 0 and opcio1 > 4:
-    opcio1 = input("Introdueix una opcio valida")
-
-
-match :
-    case 1:
-        return "Has escollit Afegir"
-        cls()
-        clau = input("Introdueix una paraula:")
-        valor = input("Introdueix el seu significat")
-    case 2:
-        return "Has escollit Mostrar"
-    case 3:
-        return "Has escollit Modificar"
-    case 4:
-        return "Has escollit Eliminar"
-    default:
-        return "desconocido"
+def menu():
+    print("Que vols fer? \n\n")
+    print("1.Afegir")
+    print("2.Mostrar")
+    print("3.Modificar")
+    print("4.Eliminar")
+    print("5.Salir")
+    opcio1 = int(input("\n\nIntrodueix una opcio valida: "))
+    return opcio1
+    
+while opcio1 != 5:
+    opcio1=menu()
+    match opcio1:
+        case 1:
+            cls()
+            print( "Has escollit Afegir")
+            clau = input("Introdueix una paraula: ")
+            valor = input("Introdueix el seu significat: ")
+            diccionari.update({clau:valor})
+        case 2:
+            cls()
+            num = 1
+            print("Has escollit Mostrar")
+            for i in diccionari.keys():
+                print(num ," : ", i)
+            if 
+            
